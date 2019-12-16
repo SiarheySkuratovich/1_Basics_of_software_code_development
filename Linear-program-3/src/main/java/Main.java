@@ -11,7 +11,4 @@ public class Main {
         return ((sin(x) + cos(y)) /
         cos(x) - sin(y)) * Math.tan(x * y);
     }
-
-
-
 }
