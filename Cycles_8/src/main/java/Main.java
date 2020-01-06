@@ -10,15 +10,13 @@ public class Main {
         System.out.println("Number 2:");
         int number2 = scanner.nextInt();
 
-        HashSet<Integer> digits = getSetOfDigits(number1);
-        int digitOfNumber2;
-        do {
-            digitOfNumber2 = number2 % 10;
-            if (digits.contains(digitOfNumber2)) {
-                System.out.println("common digit: " + digitOfNumber2);
-            }
-            number2 /= 10;
-        } while (number2 != 0);
+        HashSet<Integer> digitsOfFirstNumber = getSetOfDigits(number1);
+        HashSet<Integer> digitsOfSecondNumber = getSetOfDigits(number2);
+        HashSet<Integer> commonDigits = new HashSet<Integer>();
+        commonDigits.addAll(digitsOfFirstNumber);
+        commonDigits.retainAll(digitsOfSecondNumber);
+        System.out.println("Common digits: " + commonDigits);
+        System.out.println(digitsOfFirstNumber);
     }
 
     public static HashSet<Integer> getSetOfDigits(int number) {
